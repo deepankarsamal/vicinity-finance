@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vicinity Admin | Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "surface-variant": "#dae2fd",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "secondary-container": "#8a4cfc",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "primary-container": "#2563eb",
+                        "surface-tint": "#0053db",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-primary": "#b4c5ff",
+                        "secondary-fixed": "#eaddff",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-fixed": "#002113",
+                        "outline": "#737686",
+                        "on-secondary-fixed": "#25005a",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "tertiary-container": "#007d55",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eaedff",
+                        "background": "#faf8ff",
+                        "tertiary": "#006242",
+                        "outline-variant": "#c3c6d7",
+                        "on-primary-fixed": "#00174b",
+                        "secondary": "#712ae2",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-container-highest": "#dae2fd",
+                        "tertiary-fixed": "#6ffbbe",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-container": "#eeefff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error": "#ffffff",
+                        "primary": "#004ac6",
+                        "surface-container-high": "#e2e7ff",
+                        "surface-bright": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#bdffdb",
+                        "on-background": "#131b2e",
+                        "on-surface-variant": "#434655"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active {
+            background-color: white;
+            color: #0053db;
+            font-weight: 700;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen">
+<!-- SIDEBAR NAVIGATION (Source: JSON SideNavBar) -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 dark:bg-slate-900 flex flex-col p-6 space-y-8 z-50">
+<!-- Brand Section -->
+<div class="flex items-center space-x-3 px-2">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h1 class="text-xl font-extrabold tracking-tight text-blue-700 dark:text-blue-500">Vicinity Admin</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Management Portal</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-4 py-3 rounded-lg text-blue-700 font-bold bg-white shadow-sm transition-all scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center px-4 py-3 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="gavel">gavel</span>
+<span>Manage Pitches</span>
+</a>
+<a class="flex items-center px-4 py-3 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+<span>Manage Users</span>
+</a>
+<a class="flex items-center px-4 py-3 rounded-lg text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="assessment">assessment</span>
+<span>Reports</span>
+</a>
+</nav>
+<!-- CTA Action -->
+<button class="w-full py-3 px-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/40 transition-all active:scale-95 text-sm">
+            Create New Report
+        </button>
+<!-- Footer Links -->
+<div class="pt-6 border-t border-slate-200 space-y-1">
+<a class="flex items-center px-4 py-2 rounded-lg text-slate-600 hover:text-blue-600 transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center px-4 py-2 rounded-lg text-slate-600 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TOP APP BAR (Source: JSON TopAppBar) -->
+<header class="fixed top-0 right-0 left-64 h-16 z-30 bg-white/80 backdrop-blur-md flex items-center justify-between px-8">
+<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-full w-96 transition-all focus-within:ring-2 focus-within:ring-blue-500/20">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-medium" placeholder="Search applications, users..." type="text"/>
+</div>
+<div class="flex items-center space-x-6">
+<button class="relative text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="flex items-center space-x-3 ml-4">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Admin User</p>
+<p class="text-[10px] text-slate-500">Super Admin</p>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-white shadow-sm object-cover" data-alt="Admin User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZCGwuLJTFeUavDM0mkFNg2Px_k6uNfGgl6vC606SMkIyUlgVzzG3JAE3_RI_X2iaf0rsS375XI4-KDOhET63mPeAegX-fYunf2-BAtCHo3L0UO4suyVmjVt4ICrXiij6gBTKELROK_UpTw4hIYVBBlGicpcRPzHTvzxidAIy9n4nvq987JjLZ7Z6KpMOeHrvaYxq2eOFkrPlwcpe3APcieCphMkPDfO2Seyr5Xh68Vji3zOmZzY59NNesTcruMYdOKWece4tVK8U"/>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT AREA -->
+<main class="ml-64 pt-24 pb-12 px-12">
+<!-- Page Header -->
+<div class="flex items-end justify-between mb-10">
+<div>
+<h2 class="text-[28px] font-extrabold tracking-tight text-on-surface">Admin Overview</h2>
+<p class="text-slate-500 font-medium">Platform health at a glance.</p>
+</div>
+<div class="text-[#64748B] font-semibold text-sm">
+                June 24, 2026
+            </div>
+</div>
+<!-- STATS ROW -->
+<div class="grid grid-cols-4 gap-[20px] mb-10">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-[24px] shadow-[0_8px_32px_rgba(19,27,46,0.04)] group hover:translate-y-[-4px] transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<span class="text-amber-600 bg-amber-50 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Needs attention</span>
+</div>
+<h3 class="text-3xl font-extrabold text-on-surface">12</h3>
+<p class="text-slate-500 text-sm font-semibold">Pending Review</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-[24px] shadow-[0_8px_32px_rgba(19,27,46,0.04)] group hover:translate-y-[-4px] transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<span class="text-emerald-600 bg-emerald-50 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">+5 this week</span>
+</div>
+<h3 class="text-3xl font-extrabold text-on-surface">48</h3>
+<p class="text-slate-500 text-sm font-semibold">Approved Pitches</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-[24px] shadow-[0_8px_32px_rgba(19,27,46,0.04)] group hover:translate-y-[-4px] transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined" data-icon="currency_rupee">currency_rupee</span>
+</div>
+<span class="text-emerald-600 bg-emerald-50 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">+₹24L this month</span>
+</div>
+<h3 class="text-3xl font-extrabold text-on-surface">₹1.8Cr</h3>
+<p class="text-slate-500 text-sm font-semibold">Total Deployed</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-2xl p-[24px] shadow-[0_8px_32px_rgba(19,27,46,0.04)] group hover:translate-y-[-4px] transition-all duration-300">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<span class="text-slate-400 bg-slate-50 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">180 active</span>
+</div>
+<h3 class="text-3xl font-extrabold text-on-surface">215</h3>
+<p class="text-slate-500 text-sm font-semibold">Total Users</p>
+</div>
+</div>
+<!-- TWO COLUMN LAYOUT -->
+<div class="grid grid-cols-12 gap-[24px] mt-[40px]">
+<!-- LEFT - PENDING PITCHES QUEUE -->
+<div class="col-span-12 lg:col-span-7 bg-surface-container-lowest rounded-2xl shadow-[0_8px_32px_rgba(19,27,46,0.06)] p-[24px]">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center space-x-3">
+<h4 class="text-[18px] font-bold text-on-surface">Pending Review</h4>
+<span class="px-2.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">12</span>
+</div>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All →</a>
+</div>
+<div class="space-y-0">
+<!-- Row 1 -->
+<div class="flex items-center justify-between py-5 border-b border-slate-50 last:border-0 hover:bg-slate-50/50 transition-colors px-2 -mx-2 rounded-xl">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">VK</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface leading-tight">Kumar Textiles</h5>
+<p class="text-[12px] text-slate-500">Vinay Kumar (Indore)</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-blue-600 leading-tight">₹8,00,000</p>
+<p class="text-[11px] text-slate-400">3 days ago</p>
+</div>
+<button class="px-4 py-2 text-primary font-bold text-xs bg-primary/5 hover:bg-primary/10 rounded-lg transition-all">Review →</button>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between py-5 border-b border-slate-50 last:border-0 hover:bg-slate-50/50 transition-colors px-2 -mx-2 rounded-xl">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">AJ</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface leading-tight">Jain Organics</h5>
+<p class="text-[12px] text-slate-500">Amit Jain (Delhi)</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-blue-600 leading-tight">₹4,50,000</p>
+<p class="text-[11px] text-slate-400">2 days ago</p>
+</div>
+<button class="px-4 py-2 text-primary font-bold text-xs bg-primary/5 hover:bg-primary/10 rounded-lg transition-all">Review →</button>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between py-5 border-b border-slate-50 last:border-0 hover:bg-slate-50/50 transition-colors px-2 -mx-2 rounded-xl">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">SP</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface leading-tight">Patil Fisheries</h5>
+<p class="text-[12px] text-slate-500">Sunita Patil (Mumbai)</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-blue-600 leading-tight">₹2,00,000</p>
+<p class="text-[11px] text-slate-400">1 day ago</p>
+</div>
+<button class="px-4 py-2 text-primary font-bold text-xs bg-primary/5 hover:bg-primary/10 rounded-lg transition-all">Review →</button>
+</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-between py-5 border-b border-slate-50 last:border-0 hover:bg-slate-50/50 transition-colors px-2 -mx-2 rounded-xl">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">RM</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface leading-tight">Mishra Logistics</h5>
+<p class="text-[12px] text-slate-500">Rahul Mishra (Indore)</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-blue-600 leading-tight">₹12,00,000</p>
+<p class="text-[11px] text-slate-400">5 hours ago</p>
+</div>
+<button class="px-4 py-2 text-primary font-bold text-xs bg-primary/5 hover:bg-primary/10 rounded-lg transition-all">Review →</button>
+</div>
+<!-- Row 5 -->
+<div class="flex items-center justify-between py-5 border-b border-slate-50 last:border-0 hover:bg-slate-50/50 transition-colors px-2 -mx-2 rounded-xl">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">SD</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface leading-tight">Deshmukh Sweets</h5>
+<p class="text-[12px] text-slate-500">Sneha Deshmukh (Delhi)</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-blue-600 leading-tight">₹3,00,000</p>
+<p class="text-[11px] text-slate-400">2 hours ago</p>
+</div>
+<button class="px-4 py-2 text-primary font-bold text-xs bg-primary/5 hover:bg-primary/10 rounded-lg transition-all">Review →</button>
+</div>
+</div>
+</div>
+<!-- RIGHT - RECENT ACTIVITY FEED -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container-lowest rounded-2xl shadow-[0_8px_32px_rgba(19,27,46,0.06)] p-[24px]">
+<h4 class="text-[18px] font-bold text-on-surface mb-8">Recent Activity</h4>
+<div class="space-y-8 relative">
+<!-- Timeline Line -->
+<div class="absolute left-[15px] top-2 bottom-2 w-0.5 bg-slate-100"></div>
+<!-- Activity Item 1 -->
+<div class="flex items-start space-x-4 relative">
+<div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 z-10 shrink-0">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">
+<span class="font-bold">Sharma's Tiffin Service</span> approved
+                            </p>
+<p class="text-xs text-slate-400 mt-1">2 hours ago</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-start space-x-4 relative">
+<div class="w-8 h-8 rounded-full bg-error-container flex items-center justify-center text-error z-10 shrink-0">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">cancel</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">
+<span class="font-bold">Verma Retail</span> pitch rejected
+                            </p>
+<p class="text-xs text-slate-400 mt-1">5 hours ago</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-start space-x-4 relative">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 z-10 shrink-0">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">
+                                New lender registered: <span class="font-bold">Priya M.</span>
+</p>
+<p class="text-xs text-slate-400 mt-1">8 hours ago</p>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex items-start space-x-4 relative">
+<div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white z-10 shrink-0">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">
+<span class="font-bold">₹25,000</span> investment in Kumar Textiles
+                            </p>
+<p class="text-xs text-slate-400 mt-1">1 day ago</p>
+</div>
+</div>
+<!-- Activity Item 5 -->
+<div class="flex items-start space-x-4 relative">
+<div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 z-10 shrink-0">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">
+<span class="font-bold">Patel Farm Fresh</span> approved
+                            </p>
+<p class="text-xs text-slate-400 mt-1">1 day ago</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-10 py-3 text-slate-500 font-bold text-xs hover:text-primary hover:bg-slate-50 rounded-xl transition-all border border-dashed border-slate-200">
+                    Load More Activity
+                </button>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vicinity Finance - Manage Pitches</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-fixed-dim": "#4edea3",
+                "tertiary-fixed": "#6ffbbe",
+                "primary-fixed": "#dbe1ff",
+                "on-secondary-container": "#fffbff",
+                "inverse-surface": "#283044",
+                "tertiary-container": "#007d55",
+                "outline": "#737686",
+                "error-container": "#ffdad6",
+                "surface-bright": "#faf8ff",
+                "surface": "#faf8ff",
+                "secondary-fixed-dim": "#d2bbff",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#5a00c6",
+                "on-error-container": "#93000a",
+                "surface-container": "#eaedff",
+                "background": "#faf8ff",
+                "secondary-container": "#8a4cfc",
+                "primary-fixed-dim": "#b4c5ff",
+                "on-secondary": "#ffffff",
+                "surface-variant": "#dae2fd",
+                "error": "#ba1a1a",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed-variant": "#005236",
+                "on-secondary-fixed": "#25005a",
+                "outline-variant": "#c3c6d7",
+                "tertiary": "#006242",
+                "primary": "#004ac6",
+                "surface-dim": "#d2d9f4",
+                "secondary-fixed": "#eaddff",
+                "on-tertiary": "#ffffff",
+                "on-background": "#131b2e",
+                "on-tertiary-container": "#bdffdb",
+                "surface-container-high": "#e2e7ff",
+                "on-primary-fixed-variant": "#003ea8",
+                "on-primary-fixed": "#00174b",
+                "on-surface": "#131b2e",
+                "surface-container-highest": "#dae2fd",
+                "on-surface-variant": "#434655",
+                "surface-tint": "#0053db",
+                "inverse-on-surface": "#eef0ff",
+                "on-primary-container": "#eeefff",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#b4c5ff",
+                "secondary": "#712ae2",
+                "primary-container": "#2563eb",
+                "on-tertiary-fixed": "#002113",
+                "surface-container-low": "#f2f3ff"
+              },
+              fontFamily: {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-900 flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-extrabold tracking-tight text-blue-700 dark:text-blue-400">Vicinity Finance</h1>
+<p class="text-xs font-medium text-slate-500 uppercase tracking-widest mt-1">Admin Dashboard</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Overview</span>
+</a>
+<!-- Active Navigation -->
+<a class="flex items-center gap-3 px-3 py-2.5 text-blue-700 dark:text-blue-400 font-semibold border-r-4 border-blue-600 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Manage Pitches</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-medium">Manage Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-medium">Reports</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md z-40 flex justify-between items-center px-8 w-full border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<span class="text-lg font-extrabold text-blue-700 dark:text-blue-400">Vicinity Finance</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-slate-100 dark:bg-slate-900 border-none rounded-full text-sm focus:ring-2 focus:ring-blue-500/20 w-64" placeholder="Global search..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-200">Admin Profile</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-slate-200">
+<img alt="Administrator Portrait" class="w-full h-full object-cover" data-alt="Professional headshot of an administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApM5mUnHmgezhRvBQhF1eL1oontGDV8YeKZc8kHzAeCU9YFm-0_wDtjU9GNzZZsrQPKuOjJ9VvKHkqX_RI3bvGchwQ7ShRCKdqYazjiqJxARvKA6pX-79wLpGaXEdfmCAHZ9eeadIfXmqrkvlsz_1EhN5LtRdlGpUOzs_3CRw9okBqjUd3cYjuIxrCH6qIb3t1Jlg1K8jx_fuCE_rQJVulQKIBalZcGN0nj86PrhogSJzVEubTDAEiZU1_Zz_k6AIVzLZTQHsNXJU"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-[1400px] mx-auto p-8 lg:p-12">
+<!-- Page Header -->
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-[28px] font-extrabold tracking-tight text-on-surface">Manage Pitches</h2>
+<span class="bg-amber-100 text-amber-800 px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-2">
+<span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                    12 Pending Review
+                </span>
+</div>
+<!-- Status Tabs -->
+<div class="flex items-center border-b border-outline-variant mb-8">
+<button class="px-6 py-4 text-sm font-bold border-b-2 border-primary text-primary flex items-center gap-2">
+                    All <span class="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded-md">60</span>
+</button>
+<button class="px-6 py-4 text-sm font-semibold text-[#64748B] hover:text-primary transition-colors flex items-center gap-2">
+                    Pending <span class="bg-slate-100 text-slate-600 text-[10px] px-1.5 py-0.5 rounded-md">12</span>
+</button>
+<button class="px-6 py-4 text-sm font-semibold text-[#64748B] hover:text-primary transition-colors flex items-center gap-2">
+                    Approved <span class="bg-slate-100 text-slate-600 text-[10px] px-1.5 py-0.5 rounded-md">38</span>
+</button>
+<button class="px-6 py-4 text-sm font-semibold text-[#64748B] hover:text-primary transition-colors flex items-center gap-2">
+                    Rejected <span class="bg-slate-100 text-slate-600 text-[10px] px-1.5 py-0.5 rounded-md">6</span>
+</button>
+<button class="px-6 py-4 text-sm font-semibold text-[#64748B] hover:text-primary transition-colors flex items-center gap-2">
+                    Funded <span class="bg-slate-100 text-slate-600 text-[10px] px-1.5 py-0.5 rounded-md">4</span>
+</button>
+</div>
+<!-- Filter Row -->
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<div class="flex-1 min-w-[300px] relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Search by borrower or business..." type="text"/>
+</div>
+<div class="relative min-w-[160px]">
+<select class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-xl appearance-none focus:ring-2 focus:ring-primary/20 outline-none text-sm font-medium">
+<option>Indore</option>
+<option>Delhi</option>
+<option>Mumbai</option>
+<option>All Cities</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none">expand_more</span>
+</div>
+<div class="relative min-w-[180px]">
+<select class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-xl appearance-none focus:ring-2 focus:ring-primary/20 outline-none text-sm font-medium">
+<option>Last 30 days</option>
+<option>Last 90 days</option>
+<option>All time</option>
+</select>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none">calendar_today</span>
+</div>
+</div>
+<!-- Table Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_8px_32px_rgba(19,27,46,0.06)] overflow-hidden border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead class="bg-[#F8FAFC]">
+<tr class="text-sm font-semibold text-[#64748B]">
+<th class="px-8 py-4">Borrower</th>
+<th class="px-8 py-4">Business Name</th>
+<th class="px-8 py-4">City</th>
+<th class="px-8 py-4">Loan Ask</th>
+<th class="px-8 py-4">Submitted</th>
+<th class="px-8 py-4">Status</th>
+<th class="px-8 py-4">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#F1F5F9]">
+<!-- Row 1 -->
+<tr class="hover:bg-[#FAFBFC] transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img alt="Avatar Rohan Sharma" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-700" data-alt="Portrait of Rohan Sharma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcsPdCJ4XcWNPA-wVKUh2gFbUvDcfoA0Q5XbN1Yb99j7WOf9xV_v7UEk7hYB6dcrv5phyWHkehgCweEiTMF0nuxx5bWtMWD6H-9r6l7Txcq-rcPE04xZly0PX-nQQHobJoNZyymrNO9lx4IqV8cli7yIu43vl-auoG8JIUjaYcHwQ5ryuykyvwMxF2R1iUKxT5gbJ8jacZKBAgDTQG4F6v_8qV18iUiZtIwmaUFKeTivRPRqcVy0BYKMICUXzYlFRKHIaeeeTJwiw"/>
+<span class="font-bold text-on-surface">Rohan Sharma</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant font-medium">Sharma's Tiffin Service</td>
+<td class="px-8 py-5 text-on-surface-variant">Indore</td>
+<td class="px-8 py-5 font-bold text-on-surface">₹3,50,000</td>
+<td class="px-8 py-5 text-on-surface-variant text-sm">3 days ago</td>
+<td class="px-8 py-5">
+<span class="bg-amber-100 text-amber-800 text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md">Pending</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<button class="bg-[#10B981] hover:bg-[#059669] text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-all active:scale-95 shadow-sm">Approve</button>
+<button class="border border-error/20 hover:border-error text-error text-xs font-bold px-3 py-1.5 rounded-lg transition-all active:scale-95">Reject</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#FAFBFC] transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img alt="Avatar Vikram Kumar" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700" data-alt="Portrait of Vikram Kumar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl4T4UGGDPK0WrOAl-NDe-6I5llcp60TT8Nkd7N_9cXjQjVby4ufblBnrqDRILDrTTjcrdsLwggVQuxtJC3G3zs7bi6jhSVAt-ahrWay8IvxYiBM7Q4vyOzJ9dlRN72naKTTlDE6vknten2WwbUmIiz93Gu61YoF3hl161Ex0qbKo1jSdMr_Olpf9p94Zi2OQolEw2jLtViXt3GroVbKnVODXgvEKDb5kyNPKl6cz6ms3_-Z6aSr2OEe2Biunvgh0ICpZqqhLm3lU"/>
+<span class="font-bold text-on-surface">Vikram Kumar</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant font-medium">Kumar Textiles</td>
+<td class="px-8 py-5 text-on-surface-variant">Delhi</td>
+<td class="px-8 py-5 font-bold text-on-surface">₹8,00,000</td>
+<td class="px-8 py-5 text-on-surface-variant text-sm">5 days ago</td>
+<td class="px-8 py-5">
+<span class="bg-amber-100 text-amber-800 text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md">Pending</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<button class="bg-[#10B981] hover:bg-[#059669] text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-all shadow-sm">Approve</button>
+<button class="border border-error/20 hover:border-error text-error text-xs font-bold px-3 py-1.5 rounded-lg transition-all">Reject</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#FAFBFC] transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img alt="Avatar Meena Patel" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-xs font-bold text-green-700" data-alt="Portrait of Meena Patel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdX88NvYBl7W7Xdb2eIg_qzQdBkM6PWVYudw5CSoWR9dxwS-BORSnJHrNf_9XCK0ZtPwBGnEhpHPJQCKkslWnA13Dive9T0NTKiDEfxIflqtVWeiTO49SaSabF8qgXds2xwaLINtnWrbyK1PBf6wwPJEaXRLXDgEJb9Q3On5rnwgvdjsKBub6_F0bDvAO3lY6-Z0YjiIP2YcVFJhNScqwUDPWqZeBy_iuNKOmGCJv1y9zNUvhbEXGCmZUdmfrBISh5_QSLgdm05Tw"/>
+<span class="font-bold text-on-surface">Meena Patel</span>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant font-medium">Patel Farm Fresh</td>
+<td class="px-8 py-5 text-on-surface-variant">Mumbai</td>
+<td class="px-8 py-5 font-bold text-on-surface">₹2,00,000</td>
+<td class="px-8 py-5 text-on-surface-variant text-sm">2 weeks ago</td>
+<td class="px-8 py-5">
+<span class="bg-primary/10 text-primary text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md">Approved</span>
+</td>
+<td class="px-8 py-5">
+<a class="text-primary font-bold text-sm hover:underline" href="#">View →</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- APPROVE MODAL (VISUAL OVERLAY) -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-slate-900/40 backdrop-blur-sm">
+<div class="w-full max-w-[480px] bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden border border-outline-variant/10">
+<div class="p-8">
+<!-- Modal Header -->
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="text-[22px] font-extrabold tracking-tight text-on-surface">Approve Pitch</h3>
+</div>
+<!-- Pitch Summary Box -->
+<div class="bg-[#F0FDF4] rounded-xl p-4 mb-6 border border-green-100">
+<div class="flex items-center justify-between text-green-800">
+<div class="flex flex-col">
+<span class="text-sm font-bold">Sharma's Tiffin Service</span>
+<span class="text-xs opacity-80">Indore · ₹3,50,000</span>
+</div>
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="space-y-4 mb-8">
+<div>
+<label class="block text-sm font-bold text-slate-700 mb-2">Internal Notes (optional)</label>
+<textarea class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-green-500/20 focus:border-green-500 outline-none transition-all text-sm resize-none" placeholder="e.g. Strong revenue, good location..." rows="4"></textarea>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="flex-1 py-3 text-sm font-bold text-slate-500 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">Cancel</button>
+<button class="flex-[1.5] py-3 text-sm font-bold text-white bg-[#10B981] hover:bg-[#059669] rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-green-500/20 transition-all active:scale-95">
+                        Approve Pitch <span class="material-symbols-outlined text-base">check</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

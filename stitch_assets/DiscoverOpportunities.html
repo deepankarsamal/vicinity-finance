@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vicinity Finance - Discover Opportunities</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#dbe1ff",
+                        "surface-variant": "#dae2fd",
+                        "inverse-primary": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-bright": "#faf8ff",
+                        "secondary-fixed": "#eaddff",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "surface-dim": "#d2d9f4",
+                        "on-secondary-container": "#fffbff",
+                        "surface-tint": "#0053db",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed": "#6ffbbe",
+                        "background": "#faf8ff",
+                        "primary-container": "#2563eb",
+                        "surface-container-low": "#f2f3ff",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary-container": "#bdffdb",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#283044",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#dae2fd",
+                        "surface": "#faf8ff",
+                        "tertiary": "#006242",
+                        "surface-container-high": "#e2e7ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "primary": "#004ac6",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container": "#eaedff",
+                        "outline": "#737686",
+                        "on-secondary-fixed": "#25005a",
+                        "on-error-container": "#93000a",
+                        "on-background": "#131b2e",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#712ae2",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#131b2e",
+                        "tertiary-container": "#007d55",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#8a4cfc",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-primary-fixed": "#00174b",
+                        "error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-mesh {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
+            background-size: 16px 16px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#F2F3FF] dark:bg-slate-900 flex flex-col py-8 z-50">
+<div class="px-8 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-[#131B2E] dark:text-slate-100 tracking-tight leading-none">Vicinity</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Finance</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#131B2E]/70 dark:text-slate-400 hover:bg-[#FFFFFF]/50 dark:hover:bg-slate-800/50 font-['Inter'] text-sm font-semibold tracking-wide transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Browse Pitches (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#FFFFFF] dark:bg-slate-800 text-[#2563EB] dark:text-blue-400 shadow-[0_8px_32px_rgba(19,27,46,0.06)] font-['Inter'] text-sm font-semibold tracking-wide transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+                Browse Pitches
+            </a>
+<!-- My Portfolio (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#131B2E]/70 dark:text-slate-400 hover:bg-[#FFFFFF]/50 dark:hover:bg-slate-800/50 font-['Inter'] text-sm font-semibold tracking-wide transition-all duration-300" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                My Portfolio
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                New Investment
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen p-12">
+<!-- TopAppBar Context -->
+<header class="flex justify-between items-end mb-10 max-w-7xl mx-auto">
+<div>
+<h2 class="text-[28px] font-extrabold tracking-tight text-on-background leading-tight">Discover Opportunities</h2>
+<p class="text-[#64748B] font-medium mt-1">Browse verified business pitches from your community.</p>
+</div>
+<div class="text-sm font-semibold text-[#64748B] bg-surface-container-low px-4 py-2 rounded-full">
+                Showing 10 results
+            </div>
+</header>
+<!-- Filter Bar -->
+<section class="max-w-7xl mx-auto mb-10">
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_32px_rgba(19,27,46,0.06)] p-5 flex flex-wrap items-center gap-4">
+<!-- Search -->
+<div class="flex-1 max-w-[320px] relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full h-11 pl-12 pr-4 bg-surface-container-low border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline-variant" placeholder="Search by business or city..." type="text"/>
+</div>
+<!-- City Dropdown -->
+<div class="w-[160px] relative group">
+<select class="w-full h-11 pl-4 pr-10 bg-surface-container-low border-none rounded-xl text-sm font-semibold appearance-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>All Cities</option>
+<option>Indore</option>
+<option>Mumbai</option>
+<option>Delhi</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+<!-- Tenure Pills -->
+<div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-xl">
+<button class="px-4 py-2 text-xs font-bold bg-white text-primary rounded-lg shadow-sm">All</button>
+<button class="px-4 py-2 text-xs font-bold text-outline hover:text-on-surface transition-colors">6M</button>
+<button class="px-4 py-2 text-xs font-bold text-outline hover:text-on-surface transition-colors">12M</button>
+<button class="px-4 py-2 text-xs font-bold text-outline hover:text-on-surface transition-colors">18M</button>
+<button class="px-4 py-2 text-xs font-bold text-outline hover:text-on-surface transition-colors">24M</button>
+<button class="px-4 py-2 text-xs font-bold text-outline hover:text-on-surface transition-colors">36M</button>
+</div>
+<!-- Sort Dropdown -->
+<div class="w-[180px] relative ml-auto">
+<select class="w-full h-11 pl-4 pr-10 bg-surface-container-low border-none rounded-xl text-sm font-semibold appearance-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Highest Returns</option>
+<option>Closing Soon</option>
+<option>Newly Listed</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">sort</span>
+</div>
+</div>
+</section>
+<!-- Pitch Grid -->
+<section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_32px_rgba(19,27,46,0.06)] hover:shadow-[0_12px_48px_rgba(19,27,46,0.12)] transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer">
+<div class="h-28 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] p-5 relative bg-mesh">
+<div class="flex justify-between items-start">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/10">Food &amp; Beverage</span>
+<span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Approved
+                        </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-[18px] font-bold text-[#0F172A] leading-tight mb-1">Sharma's Tiffin Service</h3>
+<div class="flex items-center gap-1.5 text-outline text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Indore
+                    </div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Home-style meal delivery scaling to corporate hubs across central India.</p>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div>
+<p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Target</p>
+<p class="text-sm font-bold text-on-surface">₹3,50,000</p>
+</div>
+<div>
+<p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Returns</p>
+<p class="text-sm font-bold text-tertiary">14% p.a.</p>
+</div>
+<div>
+<p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Tenure</p>
+<p class="text-sm font-bold text-on-surface">18 Months</p>
+</div>
+</div>
+<div class="space-y-2 mb-8 mt-auto">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-primary">72% Funded</span>
+<span class="text-[10px] font-bold text-outline">₹2,52,000 / ₹3.5L</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-[72%] bg-gradient-to-r from-[#2563EB] to-[#10B981] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="text-xs font-bold">8 investors</span>
+</div>
+<button class="bg-[#10B981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors active:scale-95 shadow-md shadow-emerald-500/20">
+                            Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_32px_rgba(19,27,46,0.06)] hover:shadow-[0_12px_48px_rgba(19,27,46,0.12)] transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer">
+<div class="h-28 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] p-5 relative bg-mesh">
+<div class="flex justify-between items-start">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/10">Manufacturing</span>
+<span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span> Approved
+                        </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-[18px] font-bold text-[#0F172A] leading-tight mb-1">Kumar Textiles</h3>
+<div class="flex items-center gap-1.5 text-outline text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Delhi
+                    </div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Sustainable cotton weaving unit expanding its export capacity to European markets.</p>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Target</p><p class="text-sm font-bold text-on-surface">₹8,00,000</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Returns</p><p class="text-sm font-bold text-tertiary">16% p.a.</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Tenure</p><p class="text-sm font-bold text-on-surface">24 Months</p></div>
+</div>
+<div class="space-y-2 mb-8 mt-auto">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-primary">45% Funded</span>
+<span class="text-[10px] font-bold text-outline">₹3,60,000 / ₹8L</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-[45%] bg-gradient-to-r from-[#2563EB] to-[#10B981] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-outline"><span class="material-symbols-outlined text-lg">group</span><span class="text-xs font-bold">14 investors</span></div>
+<button class="bg-[#10B981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors active:scale-95 shadow-md shadow-emerald-500/20">Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_32px_rgba(19,27,46,0.06)] hover:shadow-[0_12px_48px_rgba(19,27,46,0.12)] transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer">
+<div class="h-28 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] p-5 relative bg-mesh">
+<div class="flex justify-between items-start">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/10">Agriculture</span>
+<span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span> Approved
+                        </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-[18px] font-bold text-[#0F172A] leading-tight mb-1">Patel Farm Fresh</h3>
+<div class="flex items-center gap-1.5 text-outline text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Mumbai
+                    </div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Organic farm-to-table logistics network providing daily essentials to urban Mumbai.</p>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Target</p><p class="text-sm font-bold text-on-surface">₹2,00,000</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Returns</p><p class="text-sm font-bold text-tertiary">12% p.a.</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Tenure</p><p class="text-sm font-bold text-on-surface">12 Months</p></div>
+</div>
+<div class="space-y-2 mb-8 mt-auto">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-primary">88% Funded</span>
+<span class="text-[10px] font-bold text-outline">₹1,76,000 / ₹2L</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-[88%] bg-gradient-to-r from-[#2563EB] to-[#10B981] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-outline"><span class="material-symbols-outlined text-lg">group</span><span class="text-xs font-bold">22 investors</span></div>
+<button class="bg-[#10B981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors active:scale-95 shadow-md shadow-emerald-500/20">Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_32px_rgba(19,27,46,0.06)] hover:shadow-[0_12px_48px_rgba(19,27,46,0.12)] transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer">
+<div class="h-28 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] p-5 relative bg-mesh">
+<div class="flex justify-between items-start">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/10">Automotive</span>
+<span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span> Approved
+                        </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-[18px] font-bold text-[#0F172A] leading-tight mb-1">Mehta Auto Parts</h3>
+<div class="flex items-center gap-1.5 text-outline text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Indore
+                    </div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Tier-2 spare parts distributor upgrading inventory management with digital logistics.</p>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Target</p><p class="text-sm font-bold text-on-surface">₹5,50,000</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Returns</p><p class="text-sm font-bold text-tertiary">18% p.a.</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Tenure</p><p class="text-sm font-bold text-on-surface">36 Months</p></div>
+</div>
+<div class="space-y-2 mb-8 mt-auto">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-primary">38% Funded</span>
+<span class="text-[10px] font-bold text-outline">₹2,09,000 / ₹5.5L</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-[38%] bg-gradient-to-r from-[#2563EB] to-[#10B981] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-outline"><span class="material-symbols-outlined text-lg">group</span><span class="text-xs font-bold">5 investors</span></div>
+<button class="bg-[#10B981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors active:scale-95 shadow-md shadow-emerald-500/20">Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_32px_rgba(19,27,46,0.06)] hover:shadow-[0_12px_48px_rgba(19,27,46,0.12)] transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer">
+<div class="h-28 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] p-5 relative bg-mesh">
+<div class="flex justify-between items-start">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/10">Technology</span>
+<span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span> Approved
+                        </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-[18px] font-bold text-[#0F172A] leading-tight mb-1">Nair Tech Services</h3>
+<div class="flex items-center gap-1.5 text-outline text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Mumbai
+                    </div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Hardware-as-a-service provider for co-working spaces and small enterprises.</p>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Target</p><p class="text-sm font-bold text-on-surface">₹4,00,000</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Returns</p><p class="text-sm font-bold text-tertiary">15% p.a.</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Tenure</p><p class="text-sm font-bold text-on-surface">18 Months</p></div>
+</div>
+<div class="space-y-2 mb-8 mt-auto">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-primary">61% Funded</span>
+<span class="text-[10px] font-bold text-outline">₹2,44,000 / ₹4L</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-[61%] bg-gradient-to-r from-[#2563EB] to-[#10B981] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-outline"><span class="material-symbols-outlined text-lg">group</span><span class="text-xs font-bold">11 investors</span></div>
+<button class="bg-[#10B981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors active:scale-95 shadow-md shadow-emerald-500/20">Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_32px_rgba(19,27,46,0.06)] hover:shadow-[0_12px_48px_rgba(19,27,46,0.12)] transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer">
+<div class="h-28 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] p-5 relative bg-mesh">
+<div class="flex justify-between items-start">
+<span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/10">Hospitality</span>
+<span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full"></span> Approved
+                        </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-[18px] font-bold text-[#0F172A] leading-tight mb-1">Singh Bakery</h3>
+<div class="flex items-center gap-1.5 text-outline text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-sm">location_on</span> Delhi
+                    </div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Legendary neighborhood bakery digitizing for home-delivery and artisanal gifting.</p>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Target</p><p class="text-sm font-bold text-on-surface">₹1,50,000</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Returns</p><p class="text-sm font-bold text-tertiary">13% p.a.</p></div>
+<div><p class="text-[10px] font-black text-outline uppercase tracking-wider mb-1">Tenure</p><p class="text-sm font-bold text-on-surface">12 Months</p></div>
+</div>
+<div class="space-y-2 mb-8 mt-auto">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-primary">55% Funded</span>
+<span class="text-[10px] font-bold text-outline">₹82,500 / ₹1.5L</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-[55%] bg-gradient-to-r from-[#2563EB] to-[#10B981] rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-outline"><span class="material-symbols-outlined text-lg">group</span><span class="text-xs font-bold">19 investors</span></div>
+<button class="bg-[#10B981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors active:scale-95 shadow-md shadow-emerald-500/20">Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Loading State (Skeleton) -->
+<section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 opacity-50">
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.03)] overflow-hidden animate-pulse">
+<div class="h-28 bg-surface-container-high"></div>
+<div class="p-6">
+<div class="h-6 w-3/4 bg-surface-container-high rounded mb-4"></div>
+<div class="h-3 w-1/4 bg-surface-container-high rounded mb-6"></div>
+<div class="h-16 w-full bg-surface-container-high rounded mb-6"></div>
+<div class="h-2 w-full bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.03)] overflow-hidden animate-pulse">
+<div class="h-28 bg-surface-container-high"></div>
+<div class="p-6">
+<div class="h-6 w-3/4 bg-surface-container-high rounded mb-4"></div>
+<div class="h-3 w-1/4 bg-surface-container-high rounded mb-6"></div>
+<div class="h-16 w-full bg-surface-container-high rounded mb-6"></div>
+<div class="h-2 w-full bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.03)] overflow-hidden animate-pulse">
+<div class="h-28 bg-surface-container-high"></div>
+<div class="p-6">
+<div class="h-6 w-3/4 bg-surface-container-high rounded mb-4"></div>
+<div class="h-3 w-1/4 bg-surface-container-high rounded mb-6"></div>
+<div class="h-16 w-full bg-surface-container-high rounded mb-6"></div>
+<div class="h-2 w-full bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

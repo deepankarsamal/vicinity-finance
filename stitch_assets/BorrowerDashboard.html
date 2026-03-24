@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Borrower Dashboard | Vicinity Finance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#007d55",
+              "surface-container-high": "#e2e7ff",
+              "secondary-fixed": "#eaddff",
+              "primary-container": "#2563eb",
+              "on-tertiary-fixed": "#002113",
+              "on-error": "#ffffff",
+              "inverse-surface": "#283044",
+              "background": "#faf8ff",
+              "surface-variant": "#dae2fd",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "secondary": "#712ae2",
+              "surface": "#faf8ff",
+              "primary-fixed-dim": "#b4c5ff",
+              "outline": "#737686",
+              "on-tertiary-fixed-variant": "#005236",
+              "outline-variant": "#c3c6d7",
+              "on-secondary-container": "#fffbff",
+              "on-surface": "#131b2e",
+              "tertiary": "#006242",
+              "secondary-fixed-dim": "#d2bbff",
+              "inverse-primary": "#b4c5ff",
+              "on-surface-variant": "#434655",
+              "on-primary-fixed": "#00174b",
+              "on-primary": "#ffffff",
+              "surface-container": "#eaedff",
+              "surface-container-highest": "#dae2fd",
+              "surface-bright": "#faf8ff",
+              "surface-dim": "#d2d9f4",
+              "surface-container-low": "#f2f3ff",
+              "on-secondary-fixed": "#25005a",
+              "tertiary-fixed-dim": "#4edea3",
+              "on-tertiary-container": "#bdffdb",
+              "on-primary-container": "#eeefff",
+              "tertiary-fixed": "#6ffbbe",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#8a4cfc",
+              "surface-tint": "#0053db",
+              "primary-fixed": "#dbe1ff",
+              "on-secondary-fixed-variant": "#5a00c6",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#eef0ff",
+              "primary": "#004ac6",
+              "error-container": "#ffdad6",
+              "on-background": "#131b2e",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#003ea8"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .architectural-shadow {
+            box-shadow: 0 8px 32px rgba(19, 27, 46, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- Side Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low flex flex-col h-full py-8 px-4 z-50">
+<div class="mb-12 px-2">
+<h1 class="text-xl font-extrabold text-on-surface tracking-tight">Vicinity Finance</h1>
+<p class="text-xs text-on-surface opacity-60 font-medium">Borrower Portal</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-surface-container-lowest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface opacity-80 hover:bg-surface-container-lowest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span>My Pitches</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface opacity-80 hover:bg-surface-container-lowest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span>Submit Pitch</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface opacity-80 hover:bg-surface-container-lowest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Repayments</span>
+</a>
+</nav>
+<div class="mt-auto space-y-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>New Application</span>
+</button>
+<div class="pt-6 space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 text-on-surface opacity-80">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-sm font-medium">Rohan Sharma</span>
+</div>
+<button class="w-full flex items-center gap-3 px-4 py-3 text-on-surface opacity-80 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen p-12">
+<!-- Top App Bar Content -->
+<header class="flex justify-between items-center mb-12">
+<div>
+<p class="text-on-surface opacity-60 font-medium mb-1">Good morning, Rohan 👋</p>
+<h2 class="font-headline font-extrabold text-[2rem] tracking-tighter text-on-surface leading-tight">My Dashboard</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-3 rounded-full hover:bg-surface-container-low transition-colors text-on-surface opacity-70">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="User avatar for Rohan Sharma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6uf0PopvPFhlcLNbQ8MIKHIcd0CkVOlsaB5k95gkHNkEjqqDZQeQrzhlAGKKvgt0EfjGqKNMNVwzqf4Ui-R4HHHnVN1wudnCsQxxPyuKMOTGSWXVHAKAAUxEu3SR6veNQnTUaTcnJ1oBBfNOxbhk6GRKDu6t9UvZg9xEQM3a2lr-h32eXqM-DOXuQfgNzGfw-vmdKgQ628e7-yTzW7-jDC-HhrrHVmIMrXmy4b1EsITWMyU3IHvwdEEBAs4gYMH24llcK2H5030Y"/>
+</div>
+</div>
+</header>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Total Pitches -->
+<div class="bg-surface-container-lowest p-6 rounded-[16px] architectural-shadow group hover:-translate-y-1 transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container/10 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+</div>
+<span class="text-[0.75rem] font-bold text-tertiary-container bg-tertiary-container/10 px-2 py-1 rounded-full">+1 this month</span>
+</div>
+<p class="text-on-surface opacity-60 text-xs font-semibold tracking-wider uppercase mb-1">Total Pitches</p>
+<p class="text-[2rem] font-extrabold text-on-surface leading-none">3</p>
+</div>
+<!-- Approved Pitches -->
+<div class="bg-surface-container-lowest p-6 rounded-[16px] architectural-shadow group hover:-translate-y-1 transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-container/10 rounded-xl">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<p class="text-on-surface opacity-60 text-xs font-semibold tracking-wider uppercase mb-1">Approved Pitches</p>
+<p class="text-[2rem] font-extrabold text-on-surface leading-none">1</p>
+</div>
+<!-- Amount Applied -->
+<div class="bg-surface-container-lowest p-6 rounded-[16px] architectural-shadow group hover:-translate-y-1 transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container/10 rounded-xl">
+<span class="material-symbols-outlined text-secondary" data-icon="currency_rupee">currency_rupee</span>
+</div>
+</div>
+<p class="text-on-surface opacity-60 text-xs font-semibold tracking-wider uppercase mb-1">Total Applied</p>
+<p class="text-[2rem] font-extrabold text-on-surface leading-none">₹8,50,000</p>
+</div>
+<!-- Amount Funded -->
+<div class="bg-surface-container-lowest p-6 rounded-[16px] architectural-shadow group hover:-translate-y-1 transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-fixed-dim/20 rounded-xl">
+<span class="material-symbols-outlined text-tertiary" data-icon="trending_up">trending_up</span>
+</div>
+<span class="text-[0.75rem] font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded-full">47% of applied</span>
+</div>
+<p class="text-on-surface opacity-60 text-xs font-semibold tracking-wider uppercase mb-1">Total Funded</p>
+<p class="text-[2rem] font-extrabold text-on-surface leading-none">₹3,20,000</p>
+</div>
+</section>
+<!-- Pitches Section -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline font-bold text-2xl tracking-tight text-on-surface">My Loan Pitches</h3>
+<p class="text-on-surface opacity-60 text-sm">Manage and track your funding progress</p>
+</div>
+<button class="bg-primary text-white font-semibold py-2 px-6 rounded-xl hover:bg-primary-container transition-colors shadow-lg shadow-primary/20 flex items-center gap-2">
+                    Submit New Pitch
+                    <span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-[20px] overflow-hidden architectural-shadow flex flex-col">
+<div class="p-8 pb-0">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="inline-block bg-tertiary-container/10 text-tertiary-container text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md mb-2">Approved</span>
+<h4 class="font-bold text-xl text-on-surface">Sharma's Tiffin Service</h4>
+<div class="flex items-center gap-1 text-on-surface opacity-50 text-sm mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span>Indore, MP</span>
+</div>
+</div>
+<div class="w-16 h-16 rounded-2xl bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Indian small food business setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBHUcxDOfa3O_f5UcuTJDf9QTx-eNgDOJzRgKvmOzf42UNWD7U7tiAuCf9rh9LolvB7F2G_2QZGt9NTZI7-Z0U7qGFTUHlArmi2PdV82H81mKodd7h9_JstP3gFQVj1hox5KnFAUEW8p0FtrTo1g9247PKWXAkdmAs23KWZanvNChFz5FfUmO-oaKc3H2jX_H98KKu7S3YoQF4tSgZWksCTaeFTW9HzMbIlwmvXU775_VxDd-2nIRbldOIBx86KfSJKjPSp9T-Q04"/>
+</div>
+</div>
+<p class="text-on-surface opacity-70 text-sm line-clamp-2 mb-6">Expanding my home kitchen to cater to corporate offices in Vijay Nagar...</p>
+<div class="grid grid-cols-3 gap-4 p-4 bg-surface-container-low rounded-2xl mb-6">
+<div>
+<p class="text-[10px] font-bold text-on-surface opacity-40 uppercase tracking-tighter">Loan Ask</p>
+<p class="font-bold text-on-surface">₹3.5L</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface opacity-40 uppercase tracking-tighter">Interest</p>
+<p class="font-bold text-on-surface">14% p.a.</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface opacity-40 uppercase tracking-tighter">Tenure</p>
+<p class="font-bold text-on-surface">18 Months</p>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex justify-between items-end mb-2">
+<p class="text-xs font-bold text-on-surface">72% funded</p>
+<p class="text-xs font-medium text-on-surface opacity-60">₹2,52,000 raised</p>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-tertiary-container rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-on-surface/5 p-6 flex justify-between items-center bg-surface/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface opacity-40" data-icon="group">group</span>
+<span class="text-sm font-medium text-on-surface opacity-70">8 investors</span>
+</div>
+<button class="text-primary font-bold text-sm hover:underline flex items-center gap-1 group">
+                            View Details
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[20px] overflow-hidden architectural-shadow flex flex-col">
+<div class="p-8 pb-0">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="inline-block bg-orange-100 text-orange-700 text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md mb-2">Pending</span>
+<h4 class="font-bold text-xl text-on-surface">Tech-Fix Solutions</h4>
+<div class="flex items-center gap-1 text-on-surface opacity-50 text-sm mt-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span>Pune, MH</span>
+</div>
+</div>
+<div class="w-16 h-16 rounded-2xl bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Electronic repair tools and workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1d0M6OTuBpYH9BpD7SpWjcpXdbyq8VLDa-1wfci-xCgzpNB2aBTnFTFaEXTPegM-AVdrNAAxQBXIm62XLqJrJIAO45JetN_3MvC_vp6vNoRsqNs4ORyZ96UJyRt99OG_a6IgkGpfn9_KGjAVuranMu3FHzRbd-X134fUZ6j3wykPxZN80tR267aBVo5QMbKMj4pSFiVleCeehQl7X_XfyH1_N7qqIr9qxgxTzb9TVD1xwNMaemAJo95XXaFkRA9Mbj_6mtGh8AMQ"/>
+</div>
+</div>
+<p class="text-on-surface opacity-70 text-sm line-clamp-2 mb-6">Specializing in laptop and smartphone repairs, looking to stock premium spare parts...</p>
+<div class="grid grid-cols-3 gap-4 p-4 bg-surface-container-low rounded-2xl mb-6">
+<div>
+<p class="text-[10px] font-bold text-on-surface opacity-40 uppercase tracking-tighter">Loan Ask</p>
+<p class="font-bold text-on-surface">₹2.5L</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface opacity-40 uppercase tracking-tighter">Interest</p>
+<p class="font-bold text-on-surface">16% p.a.</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface opacity-40 uppercase tracking-tighter">Tenure</p>
+<p class="font-bold text-on-surface">12 Months</p>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex justify-between items-end mb-2">
+<p class="text-xs font-bold text-on-surface">30% funded</p>
+<p class="text-xs font-medium text-on-surface opacity-60">₹75,000 raised</p>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 30%"></div>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-on-surface/5 p-6 flex justify-between items-center bg-surface/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface opacity-40" data-icon="group">group</span>
+<span class="text-sm font-medium text-on-surface opacity-70">3 investors</span>
+</div>
+<button class="text-primary font-bold text-sm hover:underline flex items-center gap-1 group">
+                            View Details
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Promotional Banner -->
+<section class="grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-8 bg-gradient-to-br from-[#131B2E] to-[#25304B] rounded-[24px] p-10 flex items-center justify-between text-white relative overflow-hidden group">
+<div class="relative z-10 max-w-md">
+<span class="inline-block bg-primary px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest mb-4">Refer &amp; Earn</span>
+<h3 class="text-3xl font-headline font-extrabold mb-4 leading-tight">Help fellow entrepreneurs grow and get rewarded.</h3>
+<p class="text-on-primary-container/70 mb-8 font-medium">Earn up to ₹2,500 for every successful borrower you refer to Vicinity Finance.</p>
+<button class="bg-white text-on-surface px-8 py-3 rounded-xl font-bold hover:bg-surface-container-high transition-colors">Generate Referral Link</button>
+</div>
+<div class="absolute right-0 bottom-0 opacity-20 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[12rem]" data-icon="celebration">celebration</span>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 bg-surface-container-low rounded-[24px] p-8 flex flex-col">
+<h4 class="font-bold text-on-surface mb-6">Recent Activity</h4>
+<div class="space-y-6 flex-1">
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-tertiary mt-2"></div>
+<div>
+<p class="text-sm font-bold text-on-surface">Investor committed ₹25,000</p>
+<p class="text-xs text-on-surface opacity-50">Sharma's Tiffin Service • 2h ago</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+<div>
+<p class="text-sm font-bold text-on-surface">New Pitch Published</p>
+<p class="text-xs text-on-surface opacity-50">Tech-Fix Solutions • Yesterday</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-secondary-container mt-2"></div>
+<div>
+<p class="text-sm font-bold text-on-surface">Profile Verified</p>
+<p class="text-xs text-on-surface opacity-50">Identity Verification • 2 days ago</p>
+</div>
+</div>
+</div>
+<button class="mt-8 text-on-surface opacity-60 font-bold text-sm hover:opacity-100 transition-opacity flex items-center gap-2">
+                    View All Activity
+                    <span class="material-symbols-outlined text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</section>
+</main>
+</body></html>

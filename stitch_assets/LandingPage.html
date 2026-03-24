@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vicinity Finance | Peer-to-Peer Lending for Indian MSMEs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .underlined-dreams {
+            position: relative;
+            z-index: 1;
+        }
+        .underlined-dreams::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+            width: 100%;
+            height: 12px;
+            background-color: #2563eb;
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 2px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#4edea3",
+                        "surface": "#faf8ff",
+                        "inverse-primary": "#b4c5ff",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-tertiary-fixed": "#002113",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container-highest": "#dae2fd",
+                        "secondary-container": "#8a4cfc",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c3c6d7",
+                        "primary-container": "#2563eb",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f2f3ff",
+                        "secondary": "#712ae2",
+                        "on-secondary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "background": "#faf8ff",
+                        "outline": "#737686",
+                        "on-secondary-fixed": "#25005a",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-surface-variant": "#434655",
+                        "on-background": "#131b2e",
+                        "surface-container": "#eaedff",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-tertiary-container": "#bdffdb",
+                        "surface-tint": "#0053db",
+                        "tertiary": "#006242",
+                        "surface-variant": "#dae2fd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e2e7ff",
+                        "tertiary-container": "#007d55",
+                        "inverse-surface": "#283044",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-dim": "#d2d9f4",
+                        "secondary-fixed": "#eaddff",
+                        "on-surface": "#131b2e",
+                        "primary": "#004ac6",
+                        "surface-bright": "#faf8ff",
+                        "on-primary-container": "#eeefff",
+                        "on-secondary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-body bg-[#F8FAFC] text-on-surface antialiased">
+<!-- Navbar -->
+<nav class="fixed top-0 w-full h-16 z-50 bg-white border-b border-[#E2E8F0] shadow-sm flex items-center">
+<div class="max-w-7xl mx-auto w-full px-6 md:px-12 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-xl font-extrabold tracking-tighter text-[#0F172A]">Vicinity Finance</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Borrow</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Lend</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-sm font-semibold text-slate-900 px-4 py-2 hover:bg-slate-50 rounded-lg transition-all" href="#">Login</a>
+<button class="bg-primary hover:bg-primary-container text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all active:scale-95 shadow-md shadow-primary/10">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="min-h-screen pt-16 flex flex-col md:flex-row items-center overflow-hidden">
+<div class="w-full md:w-[60%] px-6 md:pl-24 py-20 flex flex-col justify-center items-start">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] text-[#2563EB] text-xs font-bold mb-6 border border-[#DBEAFE]">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+                🏆 Trusted by 500+ Indian Businesses
+            </div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight mb-6">
+                Fund Local <span class="underlined-dreams">Dreams</span>, <br/> Earn Real Returns
+            </h1>
+<p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                Vicinity Finance connects small business owners with community lenders. Transparent, fair, and community-powered lending that keeps wealth local.
+            </p>
+<div class="flex flex-wrap gap-4 mb-16">
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-xl hover:shadow-primary/20 transition-all">
+                    Start Borrowing <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary/5 transition-all">
+                    Start Lending
+                </button>
+</div>
+<div class="flex items-center gap-8 py-6 px-8 bg-white/50 rounded-2xl border border-white">
+<div>
+<div class="text-2xl font-extrabold text-on-surface">₹2Cr+</div>
+<div class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Deployed</div>
+</div>
+<div class="h-10 w-px bg-slate-200"></div>
+<div>
+<div class="text-2xl font-extrabold text-on-surface">98%</div>
+<div class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Repayment</div>
+</div>
+<div class="h-10 w-px bg-slate-200"></div>
+<div>
+<div class="text-2xl font-extrabold text-on-surface">500+</div>
+<div class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Businesses</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-[40%] bg-gradient-to-br from-[#EFF6FF] to-[#DBEAFE] h-full min-h-[600px] flex items-center justify-center p-12 relative">
+<!-- Mockup Card -->
+<div class="w-full max-w-sm glass-card p-6 rounded-[2rem] shadow-2xl border border-white transform -rotate-3 hover:rotate-0 transition-transform duration-700">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full">Food &amp; Beverage</span>
+<span class="flex items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full border border-emerald-100">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span> APPROVED
+                    </span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-1">Sharma's Tiffin Service</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span> Indore, MP
+                </p>
+<div class="grid grid-cols-3 gap-2 mb-8 text-center bg-surface-container-low p-4 rounded-2xl">
+<div>
+<div class="text-sm font-extrabold text-on-surface">₹3.5L</div>
+<div class="text-[9px] text-slate-500 uppercase font-bold">Goal</div>
+</div>
+<div>
+<div class="text-sm font-extrabold text-primary">14%</div>
+<div class="text-[9px] text-slate-500 uppercase font-bold">p.a.</div>
+</div>
+<div>
+<div class="text-sm font-extrabold text-on-surface">18m</div>
+<div class="text-[9px] text-slate-500 uppercase font-bold">Term</div>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex justify-between text-xs font-bold mb-2">
+<span>72% funded</span>
+<span class="text-on-surface-variant">8 investors</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container" style="width: 72%"></div>
+</div>
+</div>
+<button class="w-full bg-on-surface text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-colors">
+                    Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Background Decoration -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-4">How It Works</h2>
+<p class="text-lg text-on-surface-variant">Simple, transparent, and fair for everyone involved.</p>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between items-start gap-12">
+<!-- Connectors (Desktop) -->
+<div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-px border-t-2 border-dashed border-slate-200 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center md:w-1/3">
+<div class="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center mb-6 shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">apartment</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold border-4 border-white">1</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Submit Your Pitch</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-[250px]">Borrowers share their business story and financial needs with our community.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center md:w-1/3">
+<div class="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mb-6 shadow-lg shadow-amber-500/10">
+<span class="material-symbols-outlined text-3xl text-amber-600" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center text-sm font-bold border-4 border-white">2</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Get Verified</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-[250px]">Our team assesses creditworthiness and provides a risk rating for transparency.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center md:w-1/3">
+<div class="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/10">
+<span class="material-symbols-outlined text-3xl text-emerald-600" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold border-4 border-white">3</div>
+</div>
+<h3 class="text-xl font-bold mb-3">Grow Together</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-[250px]">Lenders invest directly in pitches and earn monthly returns as businesses thrive.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-24 bg-[#F8FAFC]">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="mb-16">
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Why Vicinity?</h2>
+<div class="h-1.5 w-20 bg-primary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Feature 1 -->
+<div class="p-8 bg-white rounded-3xl border border-slate-100 hover:border-primary/20 transition-all hover:shadow-xl hover:shadow-slate-200/50 group">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">groups_2</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Zero Middlemen</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Direct interaction means better rates for borrowers and higher yields for lenders.</p>
+</div>
+<!-- Feature 2 -->
+<div class="p-8 bg-white rounded-3xl border border-slate-100 hover:border-emerald-500/20 transition-all hover:shadow-xl hover:shadow-slate-200/50 group">
+<div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-emerald-600">verified</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Verified Assets</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Every business undergoes a rigorous 20-point verification check before listing.</p>
+</div>
+<!-- Feature 3 -->
+<div class="p-8 bg-white rounded-3xl border border-slate-100 hover:border-purple-500/20 transition-all hover:shadow-xl hover:shadow-slate-200/50 group">
+<div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-purple-600">payments</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Real Returns</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Beat inflation with expected annual returns ranging from 12% to 18% p.a.</p>
+</div>
+<!-- Feature 4 -->
+<div class="p-8 bg-white rounded-3xl border border-slate-100 hover:border-amber-500/20 transition-all hover:shadow-xl hover:shadow-slate-200/50 group">
+<div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-amber-600">volunteer_activism</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Community First</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Invest in businesses you visit. Strengthen your local economy directly.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Pitches Preview -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Live Investment Opportunities</h2>
+<p class="text-on-surface-variant">Choose from verified businesses seeking growth capital today.</p>
+</div>
+<button class="hidden md:flex items-center gap-2 text-primary font-bold hover:underline">
+                    View All Pitches <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pitch Card 1 -->
+<div class="bg-surface-container-low rounded-[2rem] p-6 border border-slate-100 flex flex-col">
+<div class="h-48 rounded-2xl mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Boutique storefront with elegant clothing displays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJMNAernOZlPlgvOB_sg3eYYkjUnnodVVZnFJwE_ZdGnqOGLeuBndCwFLCMJewu5-eU8q1PHbGlk_5dmkUYsnEs-sfcCt-ecmrgluv1hFbPlMg3oqOwd9hNG17drmSMj2pR4jJMdzS6-wkBvWLooCLD42T-p-Ku3fQpeBFdri3i39ILTv9OkOBTwvlhWb5ajxRPLBE2spUTryYwHULKCVyKxQOkL9RMCGVG64S_j1BCUdNHmMLT_nYzb_BJuZs-hFb5_j2daN0pKk"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-widest">Retail</div>
+</div>
+<h3 class="text-xl font-bold mb-1">Kaur's Boutique</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span> Ludhiana, Punjab
+                    </p>
+<div class="flex justify-between mb-4 pb-4 border-b border-slate-200">
+<div>
+<span class="block text-lg font-extrabold">₹5.0L</span>
+<span class="text-[9px] uppercase font-bold text-slate-500">Target</span>
+</div>
+<div class="text-right">
+<span class="block text-lg font-extrabold text-emerald-600">15.5%</span>
+<span class="text-[9px] uppercase font-bold text-slate-500">Est. ROI</span>
+</div>
+</div>
+<div class="mt-auto">
+<div class="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
+<div class="h-full bg-primary" style="width: 45%"></div>
+</div>
+<button class="w-full border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Invest Now</button>
+</div>
+</div>
+<!-- Pitch Card 2 -->
+<div class="bg-surface-container-low rounded-[2rem] p-6 border border-slate-100 flex flex-col">
+<div class="h-48 rounded-2xl mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Industrial plastic manufacturing machines in factory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn-_bzkXeJOxqj2OhU1vAjfydrGSAvMh7X5G7elTnqEURuNmrMcJZpchthackQlkZQnvWdP4PA2o2bw3CKm5y89W9CD2iMHdG7LIAmgeVNK9DSgc1T7ZXRjyzScvCzfMOah02fg7poHpXizEyy-3H68VYaB26k55mG_tApDyfb423WFq9-wSMui7vzOgs8W3AbAs705vOmvlfaovBBZkicSQ7gF1yXUWGd8WqHQNj3XVmYMLzWUspseBb3dAELX-zMHUQkKes9LN8"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-widest">Manufacturing</div>
+</div>
+<h3 class="text-xl font-bold mb-1">Patel Plastics</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span> Surat, Gujarat
+                    </p>
+<div class="flex justify-between mb-4 pb-4 border-b border-slate-200">
+<div>
+<span class="block text-lg font-extrabold">₹12.0L</span>
+<span class="text-[9px] uppercase font-bold text-slate-500">Target</span>
+</div>
+<div class="text-right">
+<span class="block text-lg font-extrabold text-emerald-600">13.0%</span>
+<span class="text-[9px] uppercase font-bold text-slate-500">Est. ROI</span>
+</div>
+</div>
+<div class="mt-auto">
+<div class="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
+<div class="h-full bg-primary" style="width: 88%"></div>
+</div>
+<button class="w-full border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Invest Now</button>
+</div>
+</div>
+<!-- Pitch Card 3 -->
+<div class="bg-surface-container-low rounded-[2rem] p-6 border border-slate-100 flex flex-col">
+<div class="h-48 rounded-2xl mb-6 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Technician repairing complex electronic equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCga812DWWD5vZw3joqFgkm0ZPpZpgPuukwanvvpRop7271Tpsm5YSsskszzLST80xkc_rn_jXIWlTRQU-DY3nysciK0j9OipE4h-XRncelUAXtUswnEGh6nHMndF05JtPnzNsYzObVa8G-G__9hQywSKuIIDcYSVSsATLvv8k_5VL0253B7YhD41V9PdFlreAOtiBi4zWmurWz8HvGnTYWpww8Zk2QduCJNE4-EB3xJ99RGhxIiwm77NlHqGGZ2faWCWZyRDGMr2o"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-widest">Services</div>
+</div>
+<h3 class="text-xl font-bold mb-1">Tech-Fix Solutions</h3>
+<p class="text-sm text-on-surface-variant flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span> Pune, MH
+                    </p>
+<div class="flex justify-between mb-4 pb-4 border-b border-slate-200">
+<div>
+<span class="block text-lg font-extrabold">₹2.5L</span>
+<span class="text-[9px] uppercase font-bold text-slate-500">Target</span>
+</div>
+<div class="text-right">
+<span class="block text-lg font-extrabold text-emerald-600">16.0%</span>
+<span class="text-[9px] uppercase font-bold text-slate-500">Est. ROI</span>
+</div>
+</div>
+<div class="mt-auto">
+<div class="w-full h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
+<div class="h-full bg-primary" style="width: 25%"></div>
+</div>
+<button class="w-full border-2 border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Invest Now</button>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:shadow-lg transition-all active:scale-95">
+                    See All Opportunities
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-950 text-white pt-20 pb-10">
+<div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+<div class="lg:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-blue-500 text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-2xl font-bold">Vicinity Finance</span>
+</div>
+<p class="text-slate-400 max-w-sm mb-8">
+                    Community-powered lending for Indian businesses. We are revolutionizing MSME finance by cutting out the bank and keeping wealth where it belongs—in your neighborhood.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">language</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Quick Links</h5>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">About</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Browse Pitches</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Success Stories</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Risk Assessment</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Platform</h5>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Sign In</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Register</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Lending Guides</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Legal &amp; Compliance</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
+<p>Built for IIM Indore · Vicinity Finance · 2026</p>
+<div class="flex gap-8">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
